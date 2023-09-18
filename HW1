@@ -1,0 +1,105 @@
+#Q1
+To derive the intercept (βˆ0) and slope (βˆ1) for the estimated regression line Yˆ = βˆ0 + βˆ1X using the least square criterion, you need to minimize the sum of the squared differences between the observed values of Y (denoted as Y) and the predicted values (Yˆ) given by the regression line. Mathematically, you want to minimize the following expression:
+
+Sum of Squared Residuals (SSR) = Σ(Y - Yˆ)²
+
+To find the values of βˆ0 and βˆ1 that minimize SSR, you can take partial derivatives of SSR with respect to βˆ0 and βˆ1 and set them equal to zero. Then, you can solve the resulting equations for βˆ0 and βˆ1. Here's the step-by-step derivation:
+
+1. The regression line is given by Yˆ = βˆ0 + βˆ1X.
+
+2. The sum of squared residuals (SSR) is defined as:
+   SSR = Σ(Y - Yˆ)²
+   SSR = Σ(Y - (βˆ0 + βˆ1X))²
+
+3. To minimize SSR, we take the partial derivatives with respect to βˆ0 and βˆ1 and set them equal to zero:
+
+   ∂SSR/∂βˆ0 = -2Σ(Y - (βˆ0 + βˆ1X)) = 0
+   ∂SSR/∂βˆ1 = -2ΣX(Y - (βˆ0 + βˆ1X)) = 0
+
+4. Solve for βˆ0 and βˆ1:
+   For βˆ0:
+   -2Σ(Y - (βˆ0 + βˆ1X)) = 0
+   Σ(Y - (βˆ0 + βˆ1X)) = 0
+
+   This equation simplifies to:
+   ΣY - Σ(βˆ0 + βˆ1X) = 0
+   ΣY - Nβˆ0 - βˆ1ΣX = 0
+
+   Now, solve for βˆ0:
+   Nβˆ0 = ΣY - βˆ1ΣX
+   βˆ0 = (ΣY - βˆ1ΣX) / N
+
+   For βˆ1:
+   -2ΣX(Y - (βˆ0 + βˆ1X)) = 0
+   ΣX(Y - (βˆ0 + βˆ1X)) = 0
+
+   Now, substitute the expression for βˆ0:
+   ΣX(Y - ((ΣY - βˆ1ΣX) / N + βˆ1X)) = 0
+
+   Distribute ΣX into the equation:
+   ΣXY - (ΣY - βˆ1ΣX)/N * ΣX - βˆ1ΣX² = 0
+
+   Multiply both sides by N to eliminate the fraction:
+   NΣXY - (ΣY - βˆ1ΣX)ΣX - βˆ1NΣX² = 0
+
+   Expand and simplify:
+   NΣXY - ΣYΣX + βˆ1ΣX² - βˆ1NΣX² = 0
+
+   Combine like terms:
+   NΣXY - ΣYΣX - βˆ1NΣX² + βˆ1ΣX² = 0
+
+   Now, solve for βˆ1:
+   NΣXY - ΣYΣX = βˆ1(NΣX² - ΣX²)
+   βˆ1 = (NΣXY - ΣYΣX) / (NΣX² - ΣX²)
+
+So, you have derived the equations for estimating the intercept (βˆ0) and slope (βˆ1) of the regression line using the least squares criterion:
+
+βˆ0 = (ΣY - βˆ1ΣX) / N
+βˆ1 = (NΣXY - ΣYΣX) / (NΣX² - ΣX²)
+
+These equations can be used to estimate the coefficients of the linear regression model that minimizes the sum of squared residuals.
+#Q2
+
+#Q3
+
+#Q4
+
+The sample correlation coefficient, denoted as "r," measures the linear relationship between two variables, X and Y. To show that the sample correlation coefficient r is a value between -1 and 1, i.e., -1 ≤ r ≤ 1, we can use the Cauchy-Schwarz inequality. The Cauchy-Schwarz inequality states:
+
+|∑(X_i * Y_i)| ≤ √(∑X_i²) * √(∑Y_i²)
+
+Where X_i and Y_i are the individual data points in the X and Y variables.
+
+Now, let's define some terms for the sample correlation coefficient:
+
+- n is the number of data points in both X and Y.
+- X̄ is the mean (average) of the X values.
+- Ȳ is the mean (average) of the Y values.
+- σX is the standard deviation of X.
+- σY is the standard deviation of Y.
+
+The formula for the sample correlation coefficient r is:
+
+r = (1/n) * Σ((X_i - X̄) * (Y_i - Ȳ)) / (σX * σY)
+
+Now, we can use the Cauchy-Schwarz inequality to show that -1 ≤ r ≤ 1:
+
+|∑((X_i - X̄) * (Y_i - Ȳ))| ≤ √(∑(X_i - X̄)²) * √(∑(Y_i - Ȳ)²)
+
+Notice that the numerator of r is the left side of the inequality, and the denominators of r (σX and σY) are the right side of the inequality. Therefore:
+
+|r| ≤ (√(∑(X_i - X̄)²) * √(∑(Y_i - Ȳ)²)) / (σX * σY)
+
+|r| ≤ (√(n * σX²) * √(n * σY²)) / (σX * σY)
+
+|r| ≤ (√(n² * σX² * σY²)) / (σX * σY)
+
+|r| ≤ (n * σX * σY) / (σX * σY)
+
+|r| ≤ n
+
+Since r is defined as (1/n) times the quantity on the left side of the inequality, we have:
+
+|r| ≤ 1
+
+Therefore, we've shown that the sample correlation coefficient r is bounded by -1 ≤ r ≤ 1. This means that the value of r can range from -1 (perfect negative correlation) to 1 (perfect positive correlation), with 0 indicating no linear correlation between X and Y.
